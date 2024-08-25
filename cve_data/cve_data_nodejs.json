@@ -1,0 +1,868 @@
+[
+    {
+        "cve_id": "CVE-2017-1000188",
+        "description": "nodejs ejs version older than 2.5.5 is vulnerable to a Cross-site-scripting in the ejs.renderFile() resulting in code injection",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2017-11-17T03:29:00.267",
+        "last_modified_date": "2017-11-30T11:57:32.303",
+        "cwe_id": "CWE-79",
+        "cpe_match": [
+            "cpe:2.3:a:ejs:ejs:*:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "http://www.securityfocus.com/bid/101889",
+            "https://github.com/mde/ejs/commit/49264e0037e313a0a3e033450b5c184112516d8f"
+        ]
+    },
+    {
+        "cve_id": "CVE-2017-1000189",
+        "description": "nodejs ejs version older than 2.5.5 is vulnerable to a denial-of-service due to weak input validation in the ejs.renderFile()",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2017-11-17T03:29:00.300",
+        "last_modified_date": "2017-11-30T11:58:34.227",
+        "cwe_id": "CWE-20",
+        "cpe_match": [
+            "cpe:2.3:a:ejs:ejs:*:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "http://www.securityfocus.com/bid/101893",
+            "https://github.com/mde/ejs/commit/49264e0037e313a0a3e033450b5c184112516d8f"
+        ]
+    },
+    {
+        "cve_id": "CVE-2017-1000228",
+        "description": "nodejs ejs versions older than 2.5.3 is vulnerable to remote code execution due to weak input validation in ejs.renderFile() function",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2017-11-17T03:29:00.377",
+        "last_modified_date": "2017-11-30T12:48:32.310",
+        "cwe_id": "CWE-20",
+        "cpe_match": [
+            "cpe:2.3:a:ejs:ejs:*:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "http://www.securityfocus.com/bid/101897",
+            "https://snyk.io/vuln/npm:ejs:20161128"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10556",
+        "description": "sequelize is an Object-relational mapping, or a middleman to convert things from Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server into usable data for NodeJS In Postgres, SQLite, and Microsoft SQL Server there is an issue where arrays are treated as strings and improperly escaped. This causes potential SQL injection in sequelize 3.19.3 and earlier, where a malicious user could put `[\"test\", \"'); DELETE TestTable WHERE Id = 1 --')\"]` inside of ``` database.query('SELECT * FROM TestTable WHERE Name IN (:names)', { replacements: { names: directCopyOfUserInput } }); ``` and cause the SQL statement to become `SELECT Id FROM Table WHERE Name IN ('test', '\\'); DELETE TestTable WHERE Id = 1 --')`. In Postgres, MSSQL, and SQLite, the backslash has no special meaning. This causes the the statement to delete whichever Id has a value of 1 in the TestTable table.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-05-29T20:29:00.750",
+        "last_modified_date": "2019-10-09T23:16:46.403",
+        "cwe_id": "CWE-89",
+        "cpe_match": [
+            "cpe:2.3:a:sequelizejs:sequelize:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/sequelize/sequelize/issues/5671",
+            "https://nodesecurity.io/advisories/102"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10578",
+        "description": "unicode loads unicode data downloaded from unicode.org into nodejs. Unicode before 9.0.0 downloads binary resources over HTTP, which leaves it vulnerable to MITM attacks.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-05-29T20:29:01.157",
+        "last_modified_date": "2019-10-09T23:16:49.217",
+        "cwe_id": "CWE-310",
+        "cpe_match": [
+            "cpe:2.3:a:unicode_project:unicode:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://nodesecurity.io/advisories/161"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10593",
+        "description": "ibapi is an Interactive Brokers API addon for NodeJS. ibapi downloads binary resources over HTTP, which leaves it vulnerable to MITM attacks. Before 2.5.6, it may be possible to cause remote code execution (RCE) by swapping out the requested binary with an attacker controlled binary if the attacker is on the network or positioned in between the user and the remote server.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-05-29T20:29:01.457",
+        "last_modified_date": "2018-09-25T18:29:00.467",
+        "cwe_id": "CWE-310",
+        "cpe_match": [
+            "cpe:2.3:a:interactivebrokers:ibapi:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://gitlord.com/commitdiff/~dchem%2Fnode-ibapi-addon.git/c00dd7c98cca0423052148337e523eeb7776da68",
+            "https://gitlord.com/summary/~dchem%2Fnode-ibapi-addon.git",
+            "https://nodesecurity.io/advisories/182",
+            "https://www.npmjs.com/package/ibapi/v/2.5.6"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10550",
+        "description": "sequelize is an Object-relational mapping, or a middleman to convert things from Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server into usable data for NodeJS If user input goes into the `limit` or `order` parameters, a malicious user can put in their own SQL statements. This affects sequelize 3.16.0 and earlier.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-05-31T20:29:01.893",
+        "last_modified_date": "2019-10-09T23:16:45.730",
+        "cwe_id": "CWE-89",
+        "cpe_match": [
+            "cpe:2.3:a:sequelizejs:sequelize:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/sequelize/sequelize/pull/5167/commits/f282d85e60e3df5e57ecdb82adccb4eaef404f03",
+            "https://nodesecurity.io/advisories/112"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10553",
+        "description": "sequelize is an Object-relational mapping, or a middleman to convert things from Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server into usable data for NodeJS. A fix was pushed out that fixed potential SQL injection in sequelize 2.1.3 and earlier.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-05-31T20:29:01.970",
+        "last_modified_date": "2019-10-09T23:16:46.060",
+        "cwe_id": "CWE-89",
+        "cpe_match": [
+            "cpe:2.3:a:sequelizejs:sequelize:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/sequelize/sequelize/blob/master/changelog.md#300",
+            "https://nodesecurity.io/advisories/109"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10554",
+        "description": "sequelize is an Object-relational mapping, or a middleman to convert things from Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server into usable data for NodeJS. Before version 1.7.0-alpha3, sequelize defaulted SQLite to use MySQL backslash escaping, even though SQLite uses Postgres escaping.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-05-31T20:29:02.017",
+        "last_modified_date": "2019-10-09T23:16:46.167",
+        "cwe_id": "CWE-89",
+        "cpe_match": [
+            "cpe:2.3:a:sequelizejs:sequelize:*:*:*:*:*:node.js:*:*",
+            "cpe:2.3:a:sequelizejs:sequelize:1.7.0:alpha1:*:*:*:node.js:*:*",
+            "cpe:2.3:a:sequelizejs:sequelize:1.7.0:alpha2:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/sequelize/sequelize/commit/c876192aa6ce1f67e22b26a4d175b8478615f42d",
+            "https://nodesecurity.io/advisories/113"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10618",
+        "description": "node-browser is a wrapper webdriver by nodejs. node-browser downloads resources over HTTP, which leaves it vulnerable to MITM attacks.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-06-01T18:29:01.817",
+        "last_modified_date": "2019-10-09T23:16:53.623",
+        "cwe_id": "CWE-310",
+        "cpe_match": [
+            "cpe:2.3:a:node-browser_project:node-browser:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://nodesecurity.io/advisories/214"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10622",
+        "description": "nodeschnaps is a NodeJS compatibility layer for Java (Rhino). nodeschnaps downloads binary resources over HTTP, which leaves it vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested binary with an attacker controlled binary if the attacker is on the network or positioned in between the user and the remote server.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-06-01T18:29:01.990",
+        "last_modified_date": "2019-10-09T23:16:54.077",
+        "cwe_id": "CWE-310",
+        "cpe_match": [
+            "cpe:2.3:a:nodeschnaps_project:nodeschnaps:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://nodesecurity.io/advisories/212"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10626",
+        "description": "mystem3 is a NodeJS wrapper for the Yandex MyStem 3. mystem3 downloads binary resources over HTTP, which leaves it vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested binary with an attacker controlled binary if the attacker is on the network or positioned in between the user and the remote server.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-06-01T18:29:02.193",
+        "last_modified_date": "2019-10-09T23:16:54.497",
+        "cwe_id": "CWE-310",
+        "cpe_match": [
+            "cpe:2.3:a:mystem3_project:mystem3:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://nodesecurity.io/advisories/229"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-10647",
+        "description": "node-air-sdk is an AIR SDK for nodejs. node-air-sdk downloads binary resources over HTTP, which leaves it vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested binary with an attacker controlled binary if the attacker is on the network or positioned in between the user and the remote server.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-06-04T16:29:00.860",
+        "last_modified_date": "2019-10-09T23:16:56.933",
+        "cwe_id": "CWE-310",
+        "cpe_match": [
+            "cpe:2.3:a:node-air-sdk_project:node-air-sdk:-:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://nodesecurity.io/advisories/250"
+        ]
+    },
+    {
+        "cve_id": "CVE-2017-16042",
+        "description": "Growl adds growl notification support to nodejs. Growl before 1.10.2 does not properly sanitize input before passing it to exec, allowing for arbitrary command execution.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-06-04T19:29:02.100",
+        "last_modified_date": "2019-10-09T23:24:38.987",
+        "cwe_id": "CWE-78",
+        "cpe_match": [
+            "cpe:2.3:a:growl_project:growl:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/tj/node-growl/issues/60",
+            "https://github.com/tj/node-growl/pull/61",
+            "https://nodesecurity.io/advisories/146"
+        ]
+    },
+    {
+        "cve_id": "CVE-2016-1000232",
+        "description": "NodeJS Tough-Cookie version 2.2.2 contains a Regular Expression Parsing vulnerability in HTTP request Cookie Header parsing that can result in Denial of Service. This attack appear to be exploitable via Custom HTTP header passed by client. This vulnerability appears to have been fixed in 2.3.0.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2018-09-05T17:29:00.373",
+        "last_modified_date": "2018-10-31T15:02:32.663",
+        "cwe_id": "CWE-20",
+        "cpe_match": [
+            "cpe:2.3:a:salesforce:tough-cookie:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://access.redhat.com/errata/RHSA-2016:2101",
+            "https://access.redhat.com/errata/RHSA-2017:2912",
+            "https://access.redhat.com/security/cve/cve-2016-1000232",
+            "https://github.com/salesforce/tough-cookie/commit/615627206357d997d5e6ff9da158997de05235ae",
+            "https://github.com/salesforce/tough-cookie/commit/e4fc2e0f9ee1b7a818d68f0ac7ea696f377b1534",
+            "https://www.ibm.com/blogs/psirt/ibm-security-bulletin-ibm-api-connect-is-affected-by-node-js-tough-cookie-module-vulnerability-to-a-denial-of-service-cve-2016-1000232/",
+            "https://www.npmjs.com/advisories/130"
+        ]
+    },
+    {
+        "cve_id": "CVE-2019-12047",
+        "description": "Gridea v0.8.0 has an XSS vulnerability through which the Nodejs module can be called to achieve arbitrary code execution, as demonstrated by child_process.exec and the \"<img src=# onerror='eval(new Buffer(\" substring.",
+        "cvss_score": null,
+        "cvss_vector": null,
+        "severity": null,
+        "published_date": "2019-05-13T15:29:03.613",
+        "last_modified_date": "2019-05-13T16:24:01.007",
+        "cwe_id": "CWE-79",
+        "cpe_match": [
+            "cpe:2.3:a:gridea:gridea:0.8.0:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "https://github.com/getgridea/gridea/issues/105"
+        ]
+    },
+    {
+        "cve_id": "CVE-2019-6644",
+        "description": "Similar to the issue identified in CVE-2018-12120, on versions 14.1.0-14.1.0.5, 14.0.0-14.0.0.4, 13.0.0-13.1.2, and 12.1.0-12.1.4 BIG-IP will bind a debug nodejs process to all interfaces when invoked. This may expose the process to unauthorized users if the plugin is left in debug mode and the port is accessible.",
+        "cvss_score": 9.4,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L",
+        "severity": "CRITICAL",
+        "published_date": "2019-09-04T17:15:11.520",
+        "last_modified_date": "2020-08-24T17:37:01.140",
+        "cwe_id": "NVD-CWE-noinfo",
+        "cpe_match": [
+            "cpe:2.3:a:f5:big-ip_local_traffic_manager:*:*:*:*:*:*:*:*",
+            "cpe:2.3:a:f5:big-ip_local_traffic_manager:*:*:*:*:*:*:*:*",
+            "cpe:2.3:a:f5:big-ip_local_traffic_manager:14.0.0:*:*:*:*:*:*:*",
+            "cpe:2.3:a:f5:big-ip_local_traffic_manager:14.1.0:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "https://support.f5.com/csp/article/K75532331"
+        ]
+    },
+    {
+        "cve_id": "CVE-2019-15606",
+        "description": "Including trailing white space in HTTP header values in Nodejs 10, 12, and 13 causes bypass of authorization based on header value comparisons",
+        "cvss_score": 9.8,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "severity": "CRITICAL",
+        "published_date": "2020-02-07T15:15:11.413",
+        "last_modified_date": "2024-03-07T21:24:40.750",
+        "cwe_id": "NVD-CWE-Other",
+        "cpe_match": [
+            "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+            "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+            "cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*"
+        ],
+        "references": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00008.html",
+            "https://access.redhat.com/errata/RHSA-2020:0573",
+            "https://access.redhat.com/errata/RHSA-2020:0579",
+            "https://access.redhat.com/errata/RHSA-2020:0597",
+            "https://access.redhat.com/errata/RHSA-2020:0598",
+            "https://access.redhat.com/errata/RHSA-2020:0602",
+            "https://hackerone.com/reports/730779",
+            "https://nodejs.org/en/blog/release/v10.19.0/",
+            "https://nodejs.org/en/blog/release/v12.15.0/",
+            "https://nodejs.org/en/blog/release/v13.8.0/",
+            "https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/",
+            "https://security.gentoo.org/glsa/202003-48",
+            "https://security.netapp.com/advisory/ntap-20200221-0004/",
+            "https://www.debian.org/security/2020/dsa-4669",
+            "https://www.oracle.com//security-alerts/cpujul2021.html",
+            "https://www.oracle.com/security-alerts/cpuapr2020.html"
+        ]
+    },
+    {
+        "cve_id": "CVE-2019-4001",
+        "description": "Improper input validation in Druva inSync Client 6.5.0 allows a local, authenticated attacker to execute arbitrary NodeJS code.",
+        "cvss_score": 7.8,
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+        "severity": "HIGH",
+        "published_date": "2020-03-24T22:15:12.377",
+        "last_modified_date": "2021-07-21T11:39:23.747",
+        "cwe_id": "CWE-20",
+        "cpe_match": [
+            "cpe:2.3:a:druva:insync:6.5.0:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "https://www.tenable.com/security/research/tra-2020-12"
+        ]
+    },
+    {
+        "cve_id": "CVE-2020-15477",
+        "description": "The WebControl in RaspberryTortoise through 2012-10-28 is vulnerable to remote code execution via shell metacharacters in a URI. The file nodejs/raspberryTortoise.js has no validation on the parameter incomingString before passing it to the child_process.exec function.",
+        "cvss_score": 9.8,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "severity": "CRITICAL",
+        "published_date": "2020-07-23T20:15:11.693",
+        "last_modified_date": "2021-07-21T11:39:23.747",
+        "cwe_id": "CWE-78",
+        "cpe_match": [
+            "cpe:2.3:a:raspberrytorte:raspberrytortoise:*:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "https://gist.github.com/PreethamBomma/e7b6d220790f95555dc2c5ac1d7d2f85",
+            "https://github.com/raspberrytorte/tortoise/tree/master/nodejs"
+        ]
+    },
+    {
+        "cve_id": "CVE-2020-1694",
+        "description": "A flaw was found in all versions of Keycloak before 10.0.0, where the NodeJS adapter did not support the verify-token-audience. This flaw results in some users having access to sensitive information outside of their permissions.",
+        "cvss_score": 4.9,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+        "severity": "MEDIUM",
+        "published_date": "2020-09-16T19:15:13.803",
+        "last_modified_date": "2020-09-22T18:44:21.880",
+        "cwe_id": "CWE-732",
+        "cpe_match": [
+            "cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1790759"
+        ]
+    },
+    {
+        "cve_id": "CVE-2020-5977",
+        "description": "NVIDIA GeForce Experience, all versions prior to 3.20.5.70, contains a vulnerability in NVIDIA Web Helper NodeJS Web Server in which an uncontrolled search path is used to load a node module, which may lead to code execution, denial of service, escalation of privileges, and information disclosure.",
+        "cvss_score": 7.8,
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+        "severity": "HIGH",
+        "published_date": "2020-10-23T18:15:16.450",
+        "last_modified_date": "2021-07-21T11:39:23.747",
+        "cwe_id": "CWE-426",
+        "cpe_match": [
+            "cpe:2.3:a:nvidia:geforce_experience:*:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "https://nvidia.custhelp.com/app/answers/detail/a_id/5076"
+        ]
+    },
+    {
+        "cve_id": "CVE-2021-21297",
+        "description": "Node-Red is a low-code programming for event-driven applications built using nodejs. Node-RED 1.2.7 and earlier contains a Prototype Pollution vulnerability in the admin API. A badly formed request can modify the prototype of the default JavaScript Object with the potential to affect the default behaviour of the Node-RED runtime. The vulnerability is patched in the 1.2.8 release. A workaround is to ensure only authorized users are able to access the editor url.",
+        "cvss_score": 6.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+        "severity": "MEDIUM",
+        "published_date": "2021-02-26T17:15:12.210",
+        "last_modified_date": "2023-11-07T03:29:45.950",
+        "cwe_id": "CWE-1321",
+        "cpe_match": [
+            "cpe:2.3:a:nodered:node-red:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/node-red/node-red/releases/tag/1.2.8",
+            "https://github.com/node-red/node-red/security/advisories/GHSA-xp9c-82x8-7f67",
+            "https://www.npmjs.com/package/%40node-red/editor-api",
+            "https://www.npmjs.com/package/%40node-red/runtime"
+        ]
+    },
+    {
+        "cve_id": "CVE-2021-21298",
+        "description": "Node-Red is a low-code programming for event-driven applications built using nodejs. Node-RED 1.2.7 and earlier has a vulnerability which allows arbitrary path traversal via the Projects API. If the Projects feature is enabled, a user with `projects.read` permission is able to access any file via the Projects API. The issue has been patched in Node-RED 1.2.8. The vulnerability applies only to the Projects feature which is not enabled by default in Node-RED. The primary workaround is not give untrusted users read access to the Node-RED editor.",
+        "cvss_score": 6.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+        "severity": "MEDIUM",
+        "published_date": "2021-02-26T17:15:12.337",
+        "last_modified_date": "2023-11-07T03:29:46.107",
+        "cwe_id": "CWE-22",
+        "cpe_match": [
+            "cpe:2.3:a:nodered:node-red:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/node-red/node-red/commit/74db3e17d075f23d9c95d7871586cf461524c456",
+            "https://github.com/node-red/node-red/releases/tag/1.2.8",
+            "https://github.com/node-red/node-red/security/advisories/GHSA-m33v-338h-4v9f",
+            "https://www.npmjs.com/package/%40node-red/runtime"
+        ]
+    },
+    {
+        "cve_id": "CVE-2021-21413",
+        "description": "isolated-vm is a library for nodejs which gives you access to v8's Isolate interface. Versions of isolated-vm before v4.0.0 have API pitfalls which may make it easy for implementers to expose supposed secure isolates to the permissions of the main nodejs isolate. Reference objects allow access to the underlying reference's full prototype chain. In an environment where the implementer has exposed a Reference instance to an attacker they would be able to use it to acquire a Reference to the nodejs context's Function object. Similar application-specific attacks could be possible by modifying the local prototype of other API objects. Access to NativeModule objects could allow an attacker to load and run native code from anywhere on the filesystem. If combined with, for example, a file upload API this would allow for arbitrary code execution. This is addressed in v4.0.0 through a series of related changes.",
+        "cvss_score": 9.6,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+        "severity": "CRITICAL",
+        "published_date": "2021-03-30T23:15:14.190",
+        "last_modified_date": "2021-04-07T14:56:50.367",
+        "cwe_id": "CWE-913",
+        "cpe_match": [
+            "cpe:2.3:a:isolated-vm_project:isolated-vm:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/laverdet/isolated-vm/blob/main/CHANGELOG.md#v400",
+            "https://github.com/laverdet/isolated-vm/commit/2646e6c1558bac66285daeab54c7d490ed332b15",
+            "https://github.com/laverdet/isolated-vm/commit/27151bfecc260e96714443613880e3b2e6596704",
+            "https://github.com/laverdet/isolated-vm/security/advisories/GHSA-mmhj-4w6j-76h7"
+        ]
+    },
+    {
+        "cve_id": "CVE-2021-21421",
+        "description": "node-etsy-client is a NodeJs Etsy ReST API Client. Applications that are using node-etsy-client and reporting client error to the end user will offer api key value too This is fixed in node-etsy-client v0.3.0 and later.",
+        "cvss_score": 6.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+        "severity": "MEDIUM",
+        "published_date": "2021-04-01T22:15:11.997",
+        "last_modified_date": "2022-10-21T22:43:15.047",
+        "cwe_id": "CWE-209",
+        "cpe_match": [
+            "cpe:2.3:a:node-etsy-client_project:node-etsy-client:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/creharmony/node-etsy-client/commit/b4beb8ef080366c1a87dbf9e163051a446acaa7d",
+            "https://github.com/creharmony/node-etsy-client/security/advisories/GHSA-xw22-wv29-3299"
+        ]
+    },
+    {
+        "cve_id": "CVE-2021-23280",
+        "description": "Eaton Intelligent Power Manager (IPM) prior to 1.69 is vulnerable to authenticated arbitrary file upload vulnerability. IPM\u2019s maps_srv.js allows an attacker to upload a malicious NodeJS file using uploadBackgroud action. An attacker can upload a malicious code or execute any command using a specially crafted packet to exploit the vulnerability.",
+        "cvss_score": 9.9,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+        "severity": "CRITICAL",
+        "published_date": "2021-04-13T19:15:14.960",
+        "last_modified_date": "2021-04-21T14:50:01.790",
+        "cwe_id": "CWE-434",
+        "cpe_match": [
+            "cpe:2.3:a:eaton:intelligent_power_manager:*:*:*:*:*:*:*:*",
+            "cpe:2.3:a:eaton:intelligent_power_manager_virtual_appliance:*:*:*:*:*:*:*:*",
+            "cpe:2.3:a:eaton:intelligent_power_protector:*:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "https://www.eaton.com/content/dam/eaton/company/news-insights/cybersecurity/security-bulletins/eaton-intelligent-power-manager-ipm-vulnerability-advisory.pdf"
+        ]
+    },
+    {
+        "cve_id": "CVE-2021-29486",
+        "description": "cumulative-distribution-function is an open source npm library used which calculates statistical cumulative distribution function from data array of x values. In versions prior to 2.0.0 apps using this library on improper data may crash or go into an infinite-loop. In the case of a nodejs server-app using this library to act on invalid non-numeric data, the nodejs server may crash. This may affect other users of this server and/or require the server to be rebooted for proper operation. In the case of a browser app using this library to act on invalid non-numeric data, that browser may crash or lock up. A flaw enabling an infinite-loop was discovered in the code for evaluating the cumulative-distribution-function of input data. Although the documentation explains that numeric data is required, some users may confuse an array of strings like [\"1\",\"2\",\"3\",\"4\",\"5\"] for numeric data [1,2,3,4,5] when it is in fact string data. An infinite loop is possible when the cumulative-distribution-function is evaluated for a given point when the input data is string data rather than type `number`. This vulnerability enables an infinite-cpu-loop denial-of-service-attack on any app using npm:cumulative-distribution-function v1.0.3 or earlier if the attacker can supply malformed data to the library. The vulnerability could also manifest if a data source to be analyzed changes data type from Arrays of number (proper) to Arrays of string (invalid, but undetected by earlier version of the library). Users should upgrade to at least v2.0.0, or the latest version. Tests for several types of invalid data have been created, and version 2.0.0 has been tested to reject this invalid data by throwing a `TypeError()` instead of processing it. Developers using this library may wish to adjust their app's code slightly to better tolerate or handle this TypeError. Apps performing proper numeric data validation before sending data to this library should be mostly unaffected by this patch. The vulnerability can be mitigated in older versions by ensuring that only finite numeric data of type `Array[number]` or `number` is passed to `cumulative-distribution-function` and its `f(x)` function, respectively.",
+        "cvss_score": 7.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+        "severity": "HIGH",
+        "published_date": "2021-04-30T18:15:07.530",
+        "last_modified_date": "2022-08-03T10:24:48.467",
+        "cwe_id": "CWE-20",
+        "cpe_match": [
+            "cpe:2.3:a:cumulative-distribution-function_project:cumulative-distribution-function:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/DrPaulBrewer/cumulative-distribution-function/issues/7",
+            "https://github.com/DrPaulBrewer/cumulative-distribution-function/pull/8",
+            "https://github.com/DrPaulBrewer/cumulative-distribution-function/security/advisories/GHSA-58qp-5328-v7mh",
+            "https://www.npmjs.com/package/cumulative-distribution-function"
+        ]
+    },
+    {
+        "cve_id": "CVE-2021-39199",
+        "description": "remark-html is an open source nodejs library which compiles Markdown to HTML. In affected versions the documentation of remark-html has mentioned that it was safe by default. In practice the default was never safe and had to be opted into. That is, user input was not sanitized. This means arbitrary HTML can be passed through leading to potential XSS attacks. The problem has been patched in 13.0.2 and 14.0.1: `remark-html` is now safe by default, and the implementation matches the documentation. On older affected versions, pass `sanitize: true` if you cannot update.",
+        "cvss_score": 6.1,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+        "severity": "MEDIUM",
+        "published_date": "2021-09-07T19:15:08.747",
+        "last_modified_date": "2021-09-14T16:11:25.543",
+        "cwe_id": "CWE-79",
+        "cpe_match": [
+            "cpe:2.3:a:remark:remark-html:*:*:*:*:*:node.js:*:*",
+            "cpe:2.3:a:remark:remark-html:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/remarkjs/remark-html/commit/b75c9dde582ad87ba498e369c033dc8a350478c1",
+            "https://github.com/remarkjs/remark-html/releases/tag/14.0.1",
+            "https://github.com/remarkjs/remark-html/security/advisories/GHSA-9q5w-79cv-947m",
+            "https://www.npmjs.com/package/remark-html"
+        ]
+    },
+    {
+        "cve_id": "CVE-2021-3777",
+        "description": "nodejs-tmpl is vulnerable to Inefficient Regular Expression Complexity",
+        "cvss_score": 7.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+        "severity": "HIGH",
+        "published_date": "2021-09-15T08:15:06.673",
+        "last_modified_date": "2022-07-29T16:46:59.170",
+        "cwe_id": "NVD-CWE-Other",
+        "cpe_match": [
+            "cpe:2.3:a:tmpl_project:tmpl:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/daaku/nodejs-tmpl/commit/4c654e4d1542f329ed561fd95ccd80f30c6872d6",
+            "https://huntr.dev/bounties/a07b547a-f457-41c9-9d89-ee48bee8a4df"
+        ]
+    },
+    {
+        "cve_id": "CVE-2021-41117",
+        "description": "keypair is a a RSA PEM key generator written in javascript. keypair implements a lot of cryptographic primitives on its own or by borrowing from other libraries where possible, including node-forge. An issue was discovered where this library was generating identical RSA keys used in SSH. This would mean that the library is generating identical P, Q (and thus N) values which, in practical terms, is impossible with RSA-2048 keys. Generating identical values, repeatedly, usually indicates an issue with poor random number generation, or, poor handling of CSPRNG output. Issue 1: Poor random number generation (`GHSL-2021-1012`). The library does not rely entirely on a platform provided CSPRNG, rather, it uses it's own counter-based CMAC approach. Where things go wrong is seeding the CMAC implementation with \"true\" random data in the function `defaultSeedFile`. In order to seed the AES-CMAC generator, the library will take two different approaches depending on the JavaScript execution environment. In a browser, the library will use [`window.crypto.getRandomValues()`](https://github.com/juliangruber/keypair/blob/87c62f255baa12c1ec4f98a91600f82af80be6db/index.js#L971). However, in a nodeJS execution environment, the `window` object is not defined, so it goes down a much less secure solution, also of which has a bug in it. It does look like the library tries to use node's CSPRNG when possible unfortunately, it looks like the `crypto` object is null because a variable was declared with the same name, and set to `null`. So the node CSPRNG path is never taken. However, when `window.crypto.getRandomValues()` is not available, a Lehmer LCG random number generator is used to seed the CMAC counter, and the LCG is seeded with `Math.random`. While this is poor and would likely qualify in a security bug in itself, it does not explain the extreme frequency in which duplicate keys occur. The main flaw: The output from the Lehmer LCG is encoded incorrectly. The specific [line][https://github.com/juliangruber/keypair/blob/87c62f255baa12c1ec4f98a91600f82af80be6db/index.js#L1008] with the flaw is: `b.putByte(String.fromCharCode(next & 0xFF))` The [definition](https://github.com/juliangruber/keypair/blob/87c62f255baa12c1ec4f98a91600f82af80be6db/index.js#L350-L352) of `putByte` is `util.ByteBuffer.prototype.putByte = function(b) {this.data += String.fromCharCode(b);};`. Simplified, this is `String.fromCharCode(String.fromCharCode(next & 0xFF))`. The double `String.fromCharCode` is almost certainly unintentional and the source of weak seeding. Unfortunately, this does not result in an error. Rather, it results most of the buffer containing zeros. Since we are masking with 0xFF, we can determine that 97% of the output from the LCG are converted to zeros. The only outputs that result in meaningful values are outputs 48 through 57, inclusive. The impact is that each byte in the RNG seed has a 97% chance of being 0 due to incorrect conversion. When it is not, the bytes are 0 through 9. In summary, there are three immediate concerns: 1. The library has an insecure random number fallback path. Ideally the library would require a strong CSPRNG instead of attempting to use a LCG and `Math.random`. 2. The library does not correctly use a strong random number generator when run in NodeJS, even though a strong CSPRNG is available. 3. The fallback path has an issue in the implementation where a majority of the seed data is going to effectively be zero. Due to the poor random number generation, keypair generates RSA keys that are relatively easy to guess. This could enable an attacker to decrypt confidential messages or gain authorized access to an account belonging to the victim.",
+        "cvss_score": 9.1,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+        "severity": "CRITICAL",
+        "published_date": "2021-10-11T17:15:07.973",
+        "last_modified_date": "2021-10-19T02:19:20.640",
+        "cwe_id": "CWE-335",
+        "cpe_match": [
+            "cpe:2.3:a:keypair_project:keypair:*:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "https://github.com/juliangruber/keypair/security/advisories/GHSA-3f99-hvg4-qjwj",
+            "https://securitylab.github.com/advisories/GHSL-2021-1012-keypair/"
+        ]
+    },
+    {
+        "cve_id": "CVE-2022-24434",
+        "description": "This affects all versions of package dicer. A malicious attacker can send a modified form to server, and crash the nodejs service. An attacker could sent the payload again and again so that the service continuously crashes.",
+        "cvss_score": 7.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+        "severity": "HIGH",
+        "published_date": "2022-05-20T20:15:09.993",
+        "last_modified_date": "2022-06-07T02:04:44.750",
+        "cwe_id": "NVD-CWE-noinfo",
+        "cpe_match": [
+            "cpe:2.3:a:dicer_project:dicer:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/mscdex/busboy/issues/250",
+            "https://github.com/mscdex/dicer/pull/22",
+            "https://github.com/mscdex/dicer/pull/22/commits/b7fca2e93e8e9d4439d8acc5c02f5e54a0112dac",
+            "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2838865",
+            "https://snyk.io/vuln/SNYK-JS-DICER-2311764"
+        ]
+    },
+    {
+        "cve_id": "CVE-2022-36127",
+        "description": "A vulnerability in Apache SkyWalking NodeJS Agent prior to 0.5.1. The vulnerability will cause NodeJS services that has this agent installed to be unavailable if the OAP is unhealthy and NodeJS agent can't establish the connection.",
+        "cvss_score": 7.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+        "severity": "HIGH",
+        "published_date": "2022-07-18T12:15:08.150",
+        "last_modified_date": "2022-07-25T18:07:31.317",
+        "cwe_id": "NVD-CWE-noinfo",
+        "cpe_match": [
+            "cpe:2.3:a:apache:skywalking:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "http://www.openwall.com/lists/oss-security/2022/07/18/1",
+            "https://lists.apache.org/thread/x238wo4r5goy39dxdjcmlofp6gcdnqr3"
+        ]
+    },
+    {
+        "cve_id": "CVE-2022-37434",
+        "description": "zlib through 1.2.12 has a heap-based buffer over-read or buffer overflow in inflate in inflate.c via a large gzip header extra field. NOTE: only applications that call inflateGetHeader are affected. Some common applications bundle the affected zlib source code but may be unable to call inflateGetHeader (e.g., see the nodejs/node reference).",
+        "cvss_score": 9.8,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "severity": "CRITICAL",
+        "published_date": "2022-08-05T07:15:07.240",
+        "last_modified_date": "2023-07-19T00:56:46.373",
+        "cwe_id": "CWE-787",
+        "cpe_match": [
+            "cpe:2.3:a:zlib:zlib:*:*:*:*:*:*:*:*"
+        ],
+        "references": [
+            "http://seclists.org/fulldisclosure/2022/Oct/37",
+            "http://seclists.org/fulldisclosure/2022/Oct/38",
+            "http://seclists.org/fulldisclosure/2022/Oct/41",
+            "http://seclists.org/fulldisclosure/2022/Oct/42",
+            "http://www.openwall.com/lists/oss-security/2022/08/05/2",
+            "http://www.openwall.com/lists/oss-security/2022/08/09/1",
+            "https://github.com/curl/curl/issues/9271",
+            "https://github.com/ivd38/zlib_overflow",
+            "https://github.com/madler/zlib/blob/21767c654d31d2dccdde4330529775c6c5fd5389/zlib.h#L1062-L1063",
+            "https://github.com/madler/zlib/commit/eff308af425b67093bab25f80f1ae950166bece1",
+            "https://github.com/nodejs/node/blob/75b68c6e4db515f76df73af476eccf382bbcb00a/deps/zlib/inflate.c#L762-L764",
+            "https://lists.debian.org/debian-lts-announce/2022/09/msg00012.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/JWN4VE3JQR4O2SOUS5TXNLANRPMHWV4I/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/NMBOJ77A7T7PQCARMDUK75TE6LLESZ3O/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/PAVPQNCG3XRLCLNSQRM3KAN5ZFMVXVTY/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/X5U7OTKZSHY2I3ZFJSR2SHFHW72RKGDK/",
+            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YRQAI7H4M4RQZ2IWZUEEXECBE5D56BH2/",
+            "https://security.netapp.com/advisory/ntap-20220901-0005/",
+            "https://security.netapp.com/advisory/ntap-20230427-0007/",
+            "https://support.apple.com/kb/HT213488",
+            "https://support.apple.com/kb/HT213489",
+            "https://support.apple.com/kb/HT213490",
+            "https://support.apple.com/kb/HT213491",
+            "https://support.apple.com/kb/HT213493",
+            "https://support.apple.com/kb/HT213494",
+            "https://www.debian.org/security/2022/dsa-5218"
+        ]
+    },
+    {
+        "cve_id": "CVE-2022-39266",
+        "description": "isolated-vm is a library for nodejs which gives the user access to v8's Isolate interface. In versions 4.3.6 and prior, if the untrusted v8 cached data is passed to the API through CachedDataOptions, attackers can bypass the sandbox and run arbitrary code in the nodejs process. Version 4.3.7 changes the documentation to warn users that they should not accept `cachedData` payloads from a user.",
+        "cvss_score": 9.8,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "severity": "CRITICAL",
+        "published_date": "2022-09-29T18:15:10.227",
+        "last_modified_date": "2023-08-24T23:15:07.693",
+        "cwe_id": "CWE-20",
+        "cpe_match": [
+            "cpe:2.3:a:isolated-vm_project:isolated-vm:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/laverdet/isolated-vm/commit/218e87a6d4e8cb818bea76d1ab30cd0be51920e8",
+            "https://github.com/laverdet/isolated-vm/commits/v4.3.7",
+            "https://github.com/laverdet/isolated-vm/issues/379",
+            "https://github.com/laverdet/isolated-vm/security/advisories/GHSA-2jjq-x548-rhpv"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-34109",
+        "description": "zxcvbn-ts is an open source password strength estimator written in typescript. This vulnerability affects users running on the nodeJS platform which are using the second argument of the zxcvbn function. It can result in an unbounded resource consumption as the user inputs array is extended with every function call. Browsers are impacted, too but a single user need to do a lot of input changes so that it affects the browser, while the node process gets the inputs of every user of a platform and can be killed that way. This problem has been patched in version 3.0.2. Users are advised to upgrade. Users unable to upgrade should stop using the second argument of the zxcvbn function and use the zxcvbnOptions.setOptions function.",
+        "cvss_score": 7.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+        "severity": "HIGH",
+        "published_date": "2023-06-07T18:15:09.903",
+        "last_modified_date": "2023-06-15T15:41:44.587",
+        "cwe_id": "CWE-400",
+        "cpe_match": [
+            "cpe:2.3:a:zxcvbn-ts_project:zxcvbn-ts:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/zxcvbn-ts/zxcvbn/commit/3f9bed21b5d01f6f6863476822ca857355fba22f",
+            "https://github.com/zxcvbn-ts/zxcvbn/security/advisories/GHSA-38hx-x5hq-5fg4"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-34232",
+        "description": "snowflake-connector-nodejs, a NodeJS driver for Snowflake, is vulnerable to command injection via single sign on (SSO) browser URL authentication in versions prior to 1.6.21. In order to exploit the potential for command injection, an attacker would need to be successful in (1) establishing a malicious resource and (2) redirecting users to utilize the resource. The attacker could set up a malicious, publicly accessible server which responds to the SSO URL with an attack payload. If the attacker then tricked a user into visiting the maliciously crafted connection URL, the user\u2019s local machine would render the malicious payload, leading to a remote code execution. This attack scenario can be mitigated through URL whitelisting as well as common anti-phishing resources. Version 1.6.21 contains a patch for this issue.",
+        "cvss_score": 8.8,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+        "severity": "HIGH",
+        "published_date": "2023-06-08T21:15:17.593",
+        "last_modified_date": "2023-06-20T16:18:18.707",
+        "cwe_id": "CWE-77",
+        "cpe_match": [
+            "cpe:2.3:a:snowflake:snowflake_connector:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://community.snowflake.com/s/article/Node-js-Driver-Release-Notes",
+            "https://github.com/snowflakedb/snowflake-connector-nodejs/commit/0c9622ae12cd7d627df404b73a783b4a5f60728a",
+            "https://github.com/snowflakedb/snowflake-connector-nodejs/pull/465",
+            "https://github.com/snowflakedb/snowflake-connector-nodejs/security/advisories/GHSA-h53w-7qw7-vh5c"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-37899",
+        "description": "Feathersjs is a framework for creating web APIs and real-time applications with TypeScript or JavaScript. Feathers socket handler did not catch invalid string conversion errors like `const message = ${{ toString: '' }}` which would cause the NodeJS process to crash when sending an unexpected Socket.io message like `socket.emit('find', { toString: '' })`.  A fix has been released in versions 5.0.8 and 4.5.18. Users are advised to upgrade. There is no known workaround for this vulnerability.",
+        "cvss_score": 7.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+        "severity": "HIGH",
+        "published_date": "2023-07-19T20:15:10.807",
+        "last_modified_date": "2023-07-28T15:55:57.443",
+        "cwe_id": "CWE-754",
+        "cpe_match": [
+            "cpe:2.3:a:feathersjs:feathers:*:*:*:*:*:node.js:*:*",
+            "cpe:2.3:a:feathersjs:feathers:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/feathersjs/feathers/blob/crow/CHANGELOG.md#4518-2023-07-19",
+            "https://github.com/feathersjs/feathers/blob/dove/CHANGELOG.md#508-2023-07-19",
+            "https://github.com/feathersjs/feathers/pull/3241",
+            "https://github.com/feathersjs/feathers/pull/3242",
+            "https://github.com/feathersjs/feathers/security/advisories/GHSA-hhr9-rh25-hvf9"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-40340",
+        "description": "Jenkins NodeJS Plugin 1.6.0 and earlier does not properly mask (i.e., replace with asterisks) credentials specified in the Npm config file in Pipeline build logs.",
+        "cvss_score": 7.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "severity": "HIGH",
+        "published_date": "2023-08-16T15:15:11.620",
+        "last_modified_date": "2023-08-22T18:56:54.967",
+        "cwe_id": "NVD-CWE-noinfo",
+        "cpe_match": [
+            "cpe:2.3:a:jenkins:nodejs:*:*:*:*:*:jenkins:*:*"
+        ],
+        "references": [
+            "http://www.openwall.com/lists/oss-security/2023/08/16/3",
+            "https://www.jenkins.io/security/advisory/2023-08-16/#SECURITY-3196"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-43646",
+        "description": "get-func-name is a module to retrieve a function's name securely and consistently both in NodeJS and the browser. Versions prior to 2.0.1 are subject to a regular expression denial of service (redos) vulnerability which may lead to a denial of service when parsing malicious input. This vulnerability can be exploited when there is an imbalance in parentheses, which results in excessive backtracking and subsequently increases the CPU load and processing time significantly. This vulnerability can be triggered using the following input: '\\t'.repeat(54773) + '\\t/function/i'. This issue has been addressed in commit `f934b228b` which has been included in releases from 2.0.1. Users are advised to upgrade. There are no known workarounds for this vulnerability.",
+        "cvss_score": 7.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+        "severity": "HIGH",
+        "published_date": "2023-09-27T15:19:34.427",
+        "last_modified_date": "2023-10-02T16:26:52.173",
+        "cwe_id": "CWE-1333",
+        "cpe_match": [
+            "cpe:2.3:a:chaijs:get-func-name:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/chaijs/get-func-name/commit/f934b228b5e2cb94d6c8576d3aac05493f667c69",
+            "https://github.com/chaijs/get-func-name/security/advisories/GHSA-4q6p-r6v2-jvc5"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-6460",
+        "description": "A potential logging of the firestore key via logging within nodejs-firestore exists - Developers who were logging objects through this._settings would be logging the firestore key as well potentially exposing it to anyone with logs read access. We recommend upgrading to version 6.1.0 to avoid this issue",
+        "cvss_score": 5.5,
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+        "severity": "MEDIUM",
+        "published_date": "2023-12-04T13:15:07.800",
+        "last_modified_date": "2023-12-08T14:03:08.493",
+        "cwe_id": "CWE-532",
+        "cpe_match": [
+            "cpe:2.3:a:google:cloud_firestore:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/googleapis/nodejs-firestore/pull/1742"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-50728",
+        "description": "octokit/webhooks is a GitHub webhook events toolset for Node.js. Starting in 9.26.0 and prior to 9.26.3, 10.9.2, 11.1.2, and 12.0.4, there is a problem caused by an issue with error handling in the @octokit/webhooks library because the error can be undefined in some cases. The resulting request was found to cause an uncaught exception that ends the nodejs process.  The bug is fixed in octokit/webhooks.js 9.26.3, 10.9.2, 11.1.2, and 12.0.4, app.js 14.02, octokit.js 3.1.2, and Protobot 12.3.3.",
+        "cvss_score": 7.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+        "severity": "HIGH",
+        "published_date": "2023-12-15T22:15:07.160",
+        "last_modified_date": "2023-12-19T20:43:55.837",
+        "cwe_id": "CWE-755",
+        "cpe_match": [
+            "cpe:2.3:a:octokit:app:14.0.1:*:*:*:*:node.js:*:*",
+            "cpe:2.3:a:octokit:octokit:*:*:*:*:*:node.js:*:*",
+            "cpe:2.3:a:octokit:webhooks:*:*:*:*:*:node.js:*:*",
+            "cpe:2.3:a:octokit:webhooks:*:*:*:*:*:node.js:*:*",
+            "cpe:2.3:a:octokit:webhooks:*:*:*:*:*:node.js:*:*",
+            "cpe:2.3:a:octokit:webhooks:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/octokit/app.js/releases/tag/v14.0.2",
+            "https://github.com/octokit/octokit.js/releases/tag/v3.1.2",
+            "https://github.com/octokit/webhooks.js/releases/tag/v10.9.2",
+            "https://github.com/octokit/webhooks.js/releases/tag/v11.1.2",
+            "https://github.com/octokit/webhooks.js/releases/tag/v12.0.4",
+            "https://github.com/octokit/webhooks.js/releases/tag/v9.26.3",
+            "https://github.com/octokit/webhooks.js/security/advisories/GHSA-pwfr-8pq7-x9qv",
+            "https://github.com/probot/probot/releases/tag/v12.3.3"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-52079",
+        "description": "msgpackr is a fast MessagePack NodeJS/JavaScript implementation. Prior to 1.10.1, when decoding user supplied MessagePack messages, users can trigger stuck threads by crafting messages that keep the decoder stuck in a loop. The fix is available in v1.10.1.  \nExploits seem to require structured cloning, replacing the 0x70 extension with your own (that throws an error or does something other than recursive referencing) should mitigate the issue.",
+        "cvss_score": 6.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+        "severity": "MEDIUM",
+        "published_date": "2023-12-28T16:16:01.863",
+        "last_modified_date": "2024-01-04T19:24:22.547",
+        "cwe_id": "CWE-674",
+        "cpe_match": [
+            "cpe:2.3:a:kriszyp:msgpackr:*:*:*:*:*:node.js:*:*"
+        ],
+        "references": [
+            "https://github.com/kriszyp/msgpackr/commit/18f44f8800e2261341cdf489d1ba1e35a0133602",
+            "https://github.com/kriszyp/msgpackr/security/advisories/GHSA-7hpj-7hhx-2fgx"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-7245",
+        "description": "The nodejs framework in OpenVPN Connect 3.0 through 3.4.3 (Windows)/3.4.7 (macOS) was not properly configured, which allows a local user to execute arbitrary code within the nodejs process context via the ELECTRON_RUN_AS_NODE environment variable\n",
+        "cvss_score": 7.8,
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+        "severity": "HIGH",
+        "published_date": "2024-02-20T11:15:07.750",
+        "last_modified_date": "2024-08-14T15:35:03.783",
+        "cwe_id": "CWE-95",
+        "cpe_match": [],
+        "references": [
+            "https://openvpn.net/vpn-server-resources/openvpn-connect-for-macos-change-log/",
+            "https://openvpn.net/vpn-server-resources/openvpn-connect-for-windows-change-log/"
+        ]
+    },
+    {
+        "cve_id": "CVE-2024-34712",
+        "description": "Oceanic is a NodeJS library for interfacing with Discord. Prior to version 1.10.4, input to functions such as `Client.rest.channels.removeBan` is not url-encoded, resulting in specially crafted input such as `../../../channels/{id}` being normalized into the url `/api/v10/channels/{id}`, and deleting a channel rather than removing a ban. Version 1.10.4 fixes this issue. Some workarounds are available. One may sanitize user input, ensuring strings are valid for the purpose they are being used for. One may also encode input with `encodeURIComponent` before providing it to the library.",
+        "cvss_score": 6.5,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+        "severity": "MEDIUM",
+        "published_date": "2024-05-14T16:17:26.600",
+        "last_modified_date": "2024-05-14T19:17:55.627",
+        "cwe_id": "CWE-22",
+        "cpe_match": [],
+        "references": [
+            "https://github.com/OceanicJS/Oceanic/commit/8bf8ee8373b8c565fbdbf70a609aba4fbc1a1ffe",
+            "https://github.com/OceanicJS/Oceanic/security/advisories/GHSA-5h5v-hw44-f6gg"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-37898",
+        "description": "Joplin is a free, open source note taking and to-do application. A Cross-site Scripting (XSS) vulnerability allows an untrusted note opened in safe mode to execute arbitrary code. `packages/renderer/MarkupToHtml.ts` renders note content in safe mode by surrounding it with <pre> and </pre>, without escaping any interior HTML tags. Thus, an attacker can create a note that closes the opening <pre> tag, then includes HTML that runs JavaScript. Because the rendered markdown iframe has the same origin as the toplevel document and is not sandboxed, any scripts running in the preview iframe can access the top variable and, thus, access the toplevel NodeJS `require` function. `require` can then be used to import modules like fs or child_process and run arbitrary commands. This issue has been addressed in version 2.12.9 and all users are advised to upgrade. There are no known workarounds for this vulnerability.",
+        "cvss_score": 8.2,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:L/A:L",
+        "severity": "HIGH",
+        "published_date": "2024-06-21T20:15:11.583",
+        "last_modified_date": "2024-06-24T12:57:36.513",
+        "cwe_id": "CWE-79",
+        "cpe_match": [],
+        "references": [
+            "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox",
+            "https://github.com/laurent22/joplin/security/advisories/GHSA-hjmq-3qh4-g2r8"
+        ]
+    },
+    {
+        "cve_id": "CVE-2023-38506",
+        "description": "Joplin is a free, open source note taking and to-do application. A Cross-site Scripting (XSS) vulnerability allows pasting untrusted data into the rich text editor to execute arbitrary code. HTML pasted into the rich text editor is not sanitized (or not sanitized properly). As such, the `onload` attribute of pasted images can execute arbitrary code. Because the TinyMCE editor frame does not use the `sandbox` attribute, such scripts can access NodeJS's `require` through the `top` variable. From this, an attacker can run arbitrary commands. This issue has been addressed in version 2.12.10 and users are advised to upgrade. There are no known workarounds for this vulnerability.",
+        "cvss_score": 8.2,
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:L/A:L",
+        "severity": "HIGH",
+        "published_date": "2024-06-21T20:15:12.003",
+        "last_modified_date": "2024-06-24T12:57:36.513",
+        "cwe_id": "CWE-79",
+        "cpe_match": [],
+        "references": [
+            "https://github.com/laurent22/joplin/security/advisories/GHSA-m59c-9rrj-c399"
+        ]
+    }
+]

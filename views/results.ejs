@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .json-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .key {
+            color: #a52a2a;
+        }
+        .string {
+            color: #008000;
+        }
+        .number {
+            color: #0000ff;
+        }
+        .boolean {
+            color: #ff4500;
+        }
+        .null {
+            color: #808080;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <div class="json-container">
+        <% results.forEach(result => { %>
+            <pre><%= formatJson(result) %></pre>
+        <% }) %>
+    </div>
+    <a href="/">Back</a>
+</body>
+</html>
